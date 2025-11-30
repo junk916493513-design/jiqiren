@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>路径</title>
+    <g id="机器人页面（确定）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页-机器人大屏02" transform="translate(-1538.000000, -1341.000000)" fill="#868484" fill-rule="nonzero">
+            <g id="编组-2" transform="translate(210.000000, 1211.000000)">
+                <g id="列表/活动·策略机器人" transform="translate(24.000000, 110.000000)">
+                    <g id="开关/开" transform="translate(1280.000000, 12.000000)">
+                        <g id="箭头右上" transform="translate(24.000000, 8.000000)">
+                            <polygon id="路径"
+                                     points="0.53217673 0 0.53217673 2.09073803 12.4311133 2.09073803 0 14.526866 1.48574713 16 13.9097536 3.58770646 13.9097536 15.4714614 16 15.4714614 16 0"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
