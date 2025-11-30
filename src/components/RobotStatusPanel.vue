@@ -147,6 +147,7 @@
                 v-for="(robot, index) in robotList"
                 :key="index"
                 class="table-row"
+                :class="{ flashing: flashingBots.has(robot.name) }"
             >
               <div class="robot-name">
                 <div class="robot-icon">
@@ -225,7 +226,7 @@
               </div>
               <div class="activity-price">{{ activity.price }}</div>
               <div class="activity-quantity">{{ activity.quantity }}</div>
-              <div class="activity-expand" @click="expandActivity(index)">
+              <div class="activity-expand" @click="expandActivity(activity)">
                 <img src="../assets/ic/arrow-link.svg"/>
               </div>
             </div>
@@ -250,184 +251,16 @@ export default {
       activeTab: 'data',
       activeFilter: 'all',
       totalAmount: '$9090.00',
-      robotList: [
-        {
-          name: '币安',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'failure',
-          enabled: false
-        },
-        {
-          name: '币安',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: '币安',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'failure',
-          enabled: false
-        },
-        {
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: '币安',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'failure',
-          enabled: false
-        },
-        {
-          name: '币安',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },
-        {
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        },{
-          name: 'facebook',
-          log: '当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是NIHU估值是0.01上市，同时限时抢购，需当前发布新币是需当前发布新...',
-          status: 'success',
-          enabled: true
-        }
-      ],
-      activityList: [
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '策略机器人',
-          orderType: '开放',
-          status: 'started',
-          direction: 'sell',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '策略机器人',
-          orderType: '开放',
-          status: 'started',
-          direction: 'sell',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '策略机器人',
-          orderType: '开放',
-          status: 'started',
-          direction: 'sell',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '策略机器人',
-          orderType: '开放',
-          status: 'started',
-          direction: 'sell',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '策略机器人',
-          orderType: '开放',
-          status: 'started',
-          direction: 'sell',
-          price: '$0.99',
-          quantity: '5,000'
-        },
-        {
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        },{
-          time: '1m ago',
-          name: 'MEGA',
-          type: '数据机器人',
-          orderType: '已成交',
-          status: 'paused',
-          direction: 'buy',
-          price: '$0.99',
-          quantity: '5,000'
-        }
-      ]
+      collectors: [],
+      strategies: [],
+      activityList: [],
+      eventSource: null,
+      flashingBots: new Set()
+    }
+  },
+  computed: {
+    robotList() {
+      return this.activeTab === 'data' ? this.collectors : this.strategies
     }
   },
   methods: {
@@ -444,15 +277,95 @@ export default {
       console.log('筛选:', type)
     },
     toggleSwitch(index) {
-      this.robotList[index].enabled = !this.robotList[index].enabled
+      const list = this.activeTab === 'data' ? this.collectors : this.strategies
+      list[index].enabled = !list[index].enabled
     },
-    expandActivity(index) {
-      console.log('展开活动详情:', index)
-      // 这里可以添加展开详情的逻辑
+    expandActivity(activity) {
+      if (activity.tx) {
+        window.open(`https://solscan.io/tx/${activity.tx}`, '_blank')
+      }
+    },
+    updateRobots(data) {
+      // 检测哪些机器人有更新
+      const oldBots = new Map([...this.collectors, ...this.strategies].map(r => [r.name, r.log]))
+
+      this.collectors = data.collectors.map(r => ({
+        name: r.botId,
+        log: r.lastLog || '',
+        status: r.online && r.status === 'running' ? 'success' : 'failure',
+        enabled: r.online,
+        extra: r.extra
+      }))
+      this.strategies = data.strategies.map(r => ({
+        name: r.botId,
+        log: r.lastLog || '',
+        status: r.online && r.status === 'running' ? 'success' : 'failure',
+        enabled: r.online,
+        funds: r.extra?.funds || '-',
+        extra: r.extra
+      }))
+
+      // 触发闪烁效果
+      ;[...this.collectors, ...this.strategies].forEach(r => {
+        if (oldBots.get(r.name) !== r.log || !oldBots.has(r.name)) {
+          this.flashingBots.add(r.name)
+          setTimeout(() => {
+            this.flashingBots.delete(r.name)
+            this.$forceUpdate()
+          }, 500)
+        }
+      })
+      this.$forceUpdate()
+    },
+    updateActivities(data) {
+      this.activityList = data.map(a => ({
+        time: this.formatTime(a.timestamp),
+        name: a.botName || a.botId,
+        type: a.botId?.startsWith('collector') ? '数据机器人' : '策略机器人',
+        orderType: a.action,
+        status: 'started',
+        direction: a.details?.direction || 'buy',
+        price: a.details?.price ? `$${a.details.price}` : '-',
+        quantity: a.details?.amount?.toLocaleString() || '-',
+        tx: a.tx
+      }))
+    },
+    formatTime(ts) {
+      const diff = Date.now() - ts
+      const seconds = Math.floor(diff / 1000)
+      if (seconds < 60) return `${seconds}s ago`
+      const minutes = Math.floor(seconds / 60)
+      if (minutes < 60) return `${minutes}m ago`
+      const hours = Math.floor(minutes / 60)
+      if (hours < 24) return `${hours}h ago`
+      return `${Math.floor(hours / 24)}d ago`
+    },
+    connectSSE() {
+      this.eventSource = new EventSource('/api/events')
+
+      this.eventSource.addEventListener('robots', (e) => {
+        this.updateRobots(JSON.parse(e.data))
+      })
+
+      this.eventSource.addEventListener('activities', (e) => {
+        this.updateActivities(JSON.parse(e.data))
+      })
+
+      this.eventSource.onerror = () => {
+        console.error('SSE 连接断开，3秒后重连')
+        this.eventSource.close()
+        setTimeout(() => this.connectSSE(), 3000)
+      }
     }
   },
   mounted() {
     console.log('机器人大屏页面加载完成')
+    this.connectSSE()
+  },
+  beforeDestroy() {
+    if (this.eventSource) {
+      this.eventSource.close()
+    }
   }
 }
 </script>
@@ -922,6 +835,15 @@ export default {
 
 .table-row:hover {
   background: #fafafa;
+}
+
+.table-row.flashing {
+  animation: flash 0.5s ease-in-out;
+}
+
+@keyframes flash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(115, 60, 233, 0.3); }
 }
 
 .table-row:last-child {
