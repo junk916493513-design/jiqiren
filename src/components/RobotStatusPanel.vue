@@ -129,17 +129,17 @@
               {label:'全部 (230)',value:'all'},
               {label:'运行中 (180)',value:'running'},
               {label:'已暂停 (50)',value:'paused'},
-          ]"></rTabs>
+          ]" v-if="false"></rTabs>
         </div>
 
         <!-- 表格 -->
-        <div class="list-table" :class="`list-table--${activeTab}`">
+        <div class="list-table" :class="`list-table--${activeTab}`" style="overflow-x: auto;">
           <div class="table-header">
             <div>名称</div>
             <div v-if="activeTab==='strategy'">资金</div>
             <div>实时日志</div>
             <div>状态</div>
-            <div>操控</div>
+            <div v-if="false">操控</div>
           </div>
 
           <div class="table-body">
@@ -159,7 +159,7 @@
               <div class="robot-status">
                 {{ robot.status === 'success' ? '成功' : '失败' }}
               </div>
-              <div class="robot-control">
+              <div class="robot-control" v-if="false">
                 <div
                     class="toggle-switch"
                     :class="{ active: robot.enabled }"
@@ -689,7 +689,6 @@ export default {
   width: 100%;
   max-width: 1500px;
   margin: 40px auto 0;
-  /*padding: 0 210px;*/
   box-sizing: border-box;
 }
 
@@ -885,11 +884,11 @@ export default {
 }
 
 .list-table.list-table--data .table-header {
-  grid-template-columns: 150px 767px 100px 150px;
+  grid-template-columns: 150px 917px 100px;
 }
 
 .list-table.list-table--strategy .table-header {
-  grid-template-columns: 150px 100px 596px 100px 150px;
+  grid-template-columns: 150px 100px 716px 100px;
 }
 
 .table-body {
@@ -910,11 +909,11 @@ export default {
 }
 
 .list-table.list-table--data .table-row {
-  grid-template-columns: 150px 767px 100px 150px;
+  grid-template-columns: 150px 917px 100px;
 }
 
 .list-table.list-table--strategy .table-row {
-  grid-template-columns: 150px 100px 596px 100px 150px;
+  grid-template-columns: 150px 100px 716px 100px;
 }
 
 .table-row:nth-child(odd) {
@@ -976,7 +975,7 @@ export default {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-clamp: 2; /* Added for compatibility */
 }
 
 .robot-status {
@@ -1302,7 +1301,7 @@ export default {
 
   .activity-container {
     margin: 30px auto 0;
-    padding: 0 110px;
+    /*padding: 0 110px;*/
   }
 }
 
@@ -1331,7 +1330,7 @@ export default {
   }
 
   .activity-container {
-    padding: 0 20px;
+    /*padding: 0 20px;*/
   }
 
   .activity-table-header,
