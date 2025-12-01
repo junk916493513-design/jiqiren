@@ -37,16 +37,15 @@
     <!-- Banner区域 -->
     <div class="banner">
       <img
-          src="https://www.figma.com/api/mcp/asset/48c6530a-c9c6-41d1-99b3-1716520a95e8"
+          src="../assets/ic/bg.png"
           alt="Banner Background"
           class="banner-background"
       />
-
       <div class="banner-wrapper">
         <div class="banner-content">
           <div class="banner-amount-box">
             <img
-                src="https://www.figma.com/api/mcp/asset/25015dd9-0d65-4f3b-bd27-579ae48c35fc"
+                src="../assets/ic/jiner_bg.png"
                 alt="Amount Background"
                 class="banner-amount-bg"
             />
@@ -579,9 +578,6 @@ export default {
   color: #000000;
   letter-spacing: 0;
   font-weight: 500;
-  max-width: 100%;
-  display: flex;
-  /*width: 179px;*/
   height: 56px;
   line-height: 56px;
 }

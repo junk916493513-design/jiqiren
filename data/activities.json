@@ -1,0 +1,110 @@
+[
+  {
+    "botId": "strategy_01",
+    "botName": "策略机器人A",
+    "action": "buy",
+    "details": {
+      "price": 0.0012,
+      "direction": "buy",
+      "amount": 5000
+    },
+    "tx": "0x301482f63d2a5225b543733536f0ff09530ef4977230c48a138213c236e26242",
+    "timestamp": 1764502859000
+  },
+  {
+    "botId": "collector_02",
+    "botName": "OKX采集器",
+    "action": "detect_listing",
+    "details": {
+      "price": 0.025,
+      "direction": "buy",
+      "amount": 1000
+    },
+    "tx": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "timestamp": 1764502580000
+  },
+  {
+    "botId": "strategy_02",
+    "botName": "策略机器人B",
+    "action": "sell",
+    "details": {
+      "price": 0.0018,
+      "direction": "sell",
+      "amount": 2500
+    },
+    "tx": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+    "timestamp": 1764502640000
+  },
+  {
+    "botId": "collector_01",
+    "botName": "Binance采集器",
+    "action": "fetch_new_pairs",
+    "details": {
+      "price": 0.0015,
+      "direction": "buy",
+      "amount": 3200
+    },
+    "tx": "0x8a7d3f2e1c4b5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+    "timestamp": 1764502670000
+  },
+  {
+    "botId": "strategy_01",
+    "botName": "策略机器人A",
+    "action": "buy",
+    "details": {
+      "price": 0.0012,
+      "direction": "buy",
+      "amount": 5000
+    },
+    "tx": "0x301482f63d2a5225b543733536f0ff09530ef4977230c48a138213c236e26242",
+    "timestamp": 1764502700000
+  },
+  {
+    "botId": "collector_02",
+    "botName": "OKX采集器",
+    "action": "detect_listing",
+    "details": {
+      "price": 0.025,
+      "direction": "buy",
+      "amount": 1000
+    },
+    "tx": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "timestamp": 1764502274000
+  },
+  {
+    "botId": "strategy_02",
+    "botName": "策略机器人B",
+    "action": "sell",
+    "details": {
+      "price": 0.0018,
+      "direction": "sell",
+      "amount": 2500
+    },
+    "tx": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+    "timestamp": 1764502454000
+  },
+  {
+    "botId": "collector_01",
+    "botName": "Binance采集器",
+    "action": "fetch_new_pairs",
+    "details": {
+      "price": 0.0015,
+      "direction": "buy",
+      "amount": 3200
+    },
+    "tx": "0x8a7d3f2e1c4b5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+    "timestamp": 1764502514000
+  },
+  {
+    "botId": "strategy_01",
+    "botName": "策略机器人A",
+    "action": "buy",
+    "details": {
+      "price": 0.0012,
+      "direction": "buy",
+      "amount": 5000
+    },
+    "tx": "0x301482f63d2a5225b543733536f0ff09530ef4977230c48a138213c236e26242",
+    "timestamp": 1764502574000
+  }
+]
