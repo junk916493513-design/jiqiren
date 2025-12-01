@@ -4,7 +4,7 @@
     <nav class="navbar">
       <!-- Logo区域 -->
       <div class="navbar-logo">
-        <img src="https://www.figma.com/api/mcp/asset/c89a93c4-1eae-4327-86a8-2c7035a3f042" alt="JIQIREN Logo"/>
+        <img src="../assets/ic/logo.png" alt="JIQIREN Logo"/>
         <span class="navbar-logo-text">JIQIREN</span>
       </div>
 
