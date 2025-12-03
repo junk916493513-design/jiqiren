@@ -137,7 +137,6 @@
             <div>名称</div>
             <div v-if="activeTab==='strategy'">资金</div>
             <div>实时日志</div>
-            <div>状态</div>
             <div v-if="false">操控</div>
           </div>
 
@@ -149,6 +148,7 @@
                 :class="{ flashing: flashingBots.has(robot.name) }"
             >
               <div class="robot-name">
+                <span class="status-dot" :class="robot.enabled ? 'online' : 'offline'"></span>
                 <div class="robot-icon">
                   <img :src="activeTab==='strategy'?require('../assets/ic/robotdecision_tab_click.png'):require('../assets/ic/robotdata_tab_default.png')"/>
                 </div>
@@ -156,9 +156,6 @@
               </div>
               <div class="robot-funds" v-if="activeTab==='strategy'">{{ robot.funds }}</div>
               <div class="robot-log">{{ robot.log }}</div>
-              <div class="robot-status">
-                {{ robot.status === 'success' ? '成功' : '失败' }}
-              </div>
               <div class="robot-control" v-if="false">
                 <div
                     class="toggle-switch"
@@ -793,11 +790,11 @@ export default {
 }
 
 .list-table.list-table--data .table-header {
-  grid-template-columns: 150px 917px 100px;
+  grid-template-columns: 150px 1fr;
 }
 
 .list-table.list-table--strategy .table-header {
-  grid-template-columns: 150px 100px 716px 100px;
+  grid-template-columns: 150px 100px 1fr;
 }
 
 .table-body {
@@ -818,11 +815,11 @@ export default {
 }
 
 .list-table.list-table--data .table-row {
-  grid-template-columns: 150px 917px 100px;
+  grid-template-columns: 150px 1fr;
 }
 
 .list-table.list-table--strategy .table-row {
-  grid-template-columns: 150px 100px 716px 100px;
+  grid-template-columns: 150px 100px 1fr;
 }
 
 .table-row:nth-child(odd) {
@@ -849,7 +846,24 @@ export default {
 .robot-name {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.online {
+  background: #1AB26D;
+  box-shadow: 0 0 4px rgba(26, 178, 109, 0.5);
+}
+
+.status-dot.offline {
+  background: #BC1717;
+  box-shadow: 0 0 4px rgba(188, 23, 23, 0.5);
 }
 
 .robot-icon {
