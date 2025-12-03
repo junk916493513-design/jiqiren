@@ -95,6 +95,7 @@ app.post('/api/heartbeat', (req, res) => {
   robots.set(botId, {
     type,
     botId,
+    name: req.body.name || botId,
     status: status || 'running',
     lastLog: lastLog || '',
     timestamp: timestamp || Date.now(),

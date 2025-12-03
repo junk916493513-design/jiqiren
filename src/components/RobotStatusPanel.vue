@@ -289,14 +289,14 @@ export default {
       const oldBots = new Map([...this.collectors, ...this.strategies].map(r => [r.name, r.log]))
 
       this.collectors = data.collectors.map(r => ({
-        name: r.botId,
+        name: r.name || r.botId,
         log: r.lastLog || '',
         status: r.online && r.status === 'running' ? 'success' : 'failure',
         enabled: r.online,
         extra: r.extra
       }))
       this.strategies = data.strategies.map(r => ({
-        name: r.botId,
+        name: r.name || r.botId,
         log: r.lastLog || '',
         status: r.online && r.status === 'running' ? 'success' : 'failure',
         enabled: r.online,
