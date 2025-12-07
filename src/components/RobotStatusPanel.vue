@@ -66,7 +66,7 @@
                 ? Array(displayAmount.toString().length).fill("*").join("")
                 : displayAmount
             }}</span>
-            <span class="banner-amount-unit">USDT</span>
+            <span class="banner-amount-unit" v-if="!isPrivate">USDT</span>
             <img
               class="banner-amount-fold"
               :class="{ 'is-fold': isFold }"
