@@ -662,6 +662,11 @@ export default {
   top: 20px;
 }
 
+/* Hide the dropdown icon next to USDT in the banner */
+.banner-amount-fold {
+  display: none !important;
+}
+
 /* .banner-amount-fold.is-fold {
   margin-top: 4px;
 } */
