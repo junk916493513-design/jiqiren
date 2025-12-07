@@ -63,8 +63,8 @@
             /> -->
             <span class="banner-amount" :class="{ 'is-private': isPrivate }">{{
               isPrivate
-                ? Array(totalAmount.toString().length).fill("*").join("")
-                : totalAmount
+                ? Array(displayAmount.toString().length).fill("*").join("")
+                : displayAmount
             }}</span>
             <span class="banner-amount-unit">USDT</span>
             <img
@@ -309,6 +309,10 @@ export default {
   computed: {
     robotList() {
       return this.activeTab === "data" ? this.collectors : this.strategies;
+    },
+    displayAmount() {
+      const t = (this.totalAmount || "").toString();
+      return t.replace(/^\$/, "");
     },
   },
   methods: {
